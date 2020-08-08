@@ -1,0 +1,77 @@
+
+        <div class="col-sm-12 listing-wrapper card">
+            <div class="row listing-top-section">
+                <div class="col-sm-3 listing-main-image-wrapper my-auto">
+                    <div class="">
+                        <img src="assets/images/plumber.jpg" class="listing-main-image image-centered" />
+                    </div>
+                </div>
+                <div class="col-sm-9 listing-details-section">
+                    <h3 class="listing-title">Plumber Service 24x7</h3>
+                    <p class="listing-detail-key rating-cnt">
+                        <ngb-rating [(rate)]="five"  [(max)]="max" [readonly]="readonly">
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating>
+                          <span class = "avg-rating">5.0</span>
+
+                    </p>
+                   
+                    <a class="btn amaco-btn-small amaco-btn-green">Preview</a>
+                    <p class="listing-detail-key subtxt cat">Category : <span class="listing-detail-value">Repair Services</span></p>
+                    <p class="listing-detail-key subtxt date">Created At : <span class="listing-detail-value">21-07-2020
+                            05:32am</span> <span class="listing-published-status amaco-red right">Published</span></p>
+                   
+                </div>
+            </div>
+            <div class="row listing-bottom-section">
+                <div class="col-sm-2">
+                    <div class="thumbnail-image-wrapper">
+                        <img src="assets/images/plumber.jpg" class="listing-image-thumbnail image-centered" />
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="thumbnail-image-wrapper">
+                        <img src="assets/images/plumber.jpg" class="listing-image-thumbnail image-centered" />
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="thumbnail-image-wrapper">
+                        <img src="assets/images/plumber.jpg" class="listing-image-thumbnail image-centered" />
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="thumbnail-image-wrapper">
+                        <img src="assets/images/plumber.jpg" class="listing-image-thumbnail image-centered" />
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="thumbnail-image-wrapper">
+                        <img src="assets/images/plumber.jpg" class="listing-image-thumbnail image-centered" />
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="thumbnail-image-wrapper">
+                        <div class="more-images-wrapper"><p>5<br>more</p></div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+    
+            <div class="dash-links options-menu"  >
+                <div ngbDropdown class="d-inline-block">
+                <button class="btn" id="dropdownBasic1" ngbDropdownToggle><img class = "ellipsis" src = "assets/icons/ellipsis.png" /></button>
+                
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem    [routerLink]="['/listings/create1']">View details</button>
+                    
+                    <button ngbDropdownItem>Cancel</button> 
+                </div>
+                </div> 
+
+            </div>
+
+        </div>

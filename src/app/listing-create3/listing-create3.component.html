@@ -1,0 +1,116 @@
+<app-header></app-header>
+<div class="container body-area">
+
+    <div class="container listing-create-container ">
+        <div class="row">
+            <div class="col-md-12 title-area">
+                <h1>Register a new listing</h1>
+            </div>
+            <div class="col-md-12 stepper-area">
+                <app-stepper step="3"></app-stepper>
+            </div>
+            
+                <div class="bubble">
+                    <div class="col-md-12 form-area  ">
+                        <div class="col-md-12 step-heading">
+                            <h2>Other Information</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 specifications">
+                                <div class="col-md-12">
+                                    <h4>Specifications</h4>
+                                </div>
+                                <div class="row" >
+                                    <div class="col-md-2 left">
+                                        <h5>Title</h5>
+                                    </div>
+                                    <div class="col-md-10 left">
+                                        <input type="text" class="form-control amaco-input" placeholder="Title"
+                                            aria-label="Name" aria-describedby="basic-addon2" >
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+
+                                    <div class="col-md-12 content-area  ">
+                                        <h3>Title</h3>
+                                        <p>Contents lorem ipsum is simply dummy text of the printing and typesetting
+                                            industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                                            the 1500s, when an unknown printer took a galley of type and scrambled it to
+                                            make a type specimen book. It has survived not only five centuries, but also
+                                            the leap into electronic typesetting, remaining essentially unchanged. It
+                                            was popularised in the 1960s with the release of Letraset sheets containing
+                                            Lorem Ipsum passages, and more recently with desktop publishing software
+                                            like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-sm-12">                                    
+                                    <h4>Attachments</h4>
+                                </div>
+                            </div>
+                            <div class="row" *ngFor="let ticket of t.controls; let i = index">
+                                <div [formGroup]="ticket" class="col-md-12 attachments" >
+                                    <div class="col-md-12">
+                                    </div>
+                                    <div class="col-md-12 attachment-box">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Title</label>
+                                                <input formControlName="name" type="text" class="form-control amaco-input"
+                                                    placeholder="Attachment Title" aria-label="Name"
+                                                    aria-describedby="basic-addon2" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>File</label>
+                                                <input formControlName="email" type="file" class="form-control amaco-input"
+                                                    placeholder="Attachment Title" aria-label="Name"
+                                                    aria-describedby="basic-addon2" >
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 plus-btn">
+                                    <button class="btn right" (click)="addAttachment()">
+                                        <fa-icon [icon]="plusIcon"></fa-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 buttons-area">
+                                <button class="btn left" [routerLink]="['/listings/create2']">Previous</button>
+
+                                <button class="btn right" [routerLink]="['/listings/create4']">Next</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+<app-footer></app-footer>

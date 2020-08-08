@@ -1,0 +1,101 @@
+<section class="sign-up-super-container">
+    <div class="container">
+        <div class="row sign-up-parent-row">
+            <div class="col-sm-6 sign-in-instead-container "
+                style="background-image: url('assets/images/onboarding.jpg');">
+                <div class="row my-auto sign-up-overlay height-100">
+                    <div class="col-sm-1 col-md-2"></div>
+                    <div class="col-sm-10 col-md-8 my-auto">
+                        <div class="row sign-in-instead-row">
+                            <div class="col-sm-12">
+                                <p class="sign-in-instead-hero-text">Already Have an Account?<br>Login Here!</p>
+                            </div>
+                        </div>
+                        <div class="row sign-in-instead-row">
+                            <div class="col-sm-12">
+                                <a (click)="goToSignIn()" class="btn amaco-btn amaco-btn-light center-btn">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 col-md-2"></div>
+                </div>
+            </div>
+            <div class="col-sm-6 sign-up-container">
+                <div class="row">
+                    <div class="col-sm-1 col-md-2"></div>
+                    <div class="col-sm-10 col-md-8 sign-up-content-wrapper">
+                        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+                            <div class="row sign-up-row">
+                                <div class="col-sm-12">
+                                    <div class="sign-up-icon-cnt" style="background-size:  contain; background-repeat: no-repeat; background-image: url({{avatarUrl}})" *ngIf= "avatarUrl">
+                                        <img class="sign-up-icon" (click)="fileUpload.click()"  src="assets/images/sign-up-icon.png" />
+                                    </div>
+                                    <div class="sign-up-icon-cnt" *ngIf= "notAvatarUrl" >
+                                        <img class="sign-up-icon" (click)="fileUpload.click()"  src="assets/images/sign-up-icon.png" />
+                                    </div>
+                                    
+                                   
+                                </div>
+                            </div>
+                            <div class="row sign-up-row">
+                                <div class="col-sm-12">
+                                    <p class="sign-up-message-text">Let us know more about you!</p>
+                                </div>
+                            </div>
+                            <div class="row sign-up-row">
+                                <div class="col-sm-12">
+                                    <div class="input-group mb-3">
+                                        <input #fileUpload type="file" style="visibility: hidden;" class="form-control amaco-inpupt" formControlName="profile_image" (change)="handleFileInput($event.target.files)">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="input-group mb-3">
+                                        <input formControlName="name" type="text" class="form-control amaco-input" placeholder="Name"
+                                            aria-label="Name" aria-describedby="basic-addon2" required (keyup)="validateForm()">
+                                            <label class="error-message w-100"> {{errors.name}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="input-group mb-3">
+                                        <input formControlName="email" type="email" class="form-control amaco-input" placeholder="Email"
+                                            aria-label="Email" aria-describedby="basic-addon2" required (keyup)="validateForm()">
+                                            <label class="error-message w-100"> {{errors.email}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="input-group mb-3">
+                                        <input formControlName="phone" type="text" class="form-control amaco-input" placeholder="Phone Number"
+                                            aria-label="Phone Number" aria-describedby="basic-addon2" required (keyup)="validateForm()">
+                                            <label class="error-message w-100"> {{errors.phone}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="input-group mb-3">
+                                        <input formControlName="password" type="password" class="form-control amaco-input" placeholder="Password"
+                                            aria-label="Password" aria-describedby="basic-addon2" required (keyup)="validateForm()">
+                                            <label class="error-message w-100"> {{errors.password}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="input-group mb-3">
+                                        <input formControlName="confirm_password" type="password" class="form-control amaco-input"
+                                            placeholder="Confirm Password" aria-label="Confirm Password"
+                                            aria-describedby="basic-addon2" required (keyup)="validateForm()">
+                                            <label class="error-message w-100">{{ errors.confirm_password}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row sign-up-row">
+                                <div class="col-sm-12">
+                                    <button [disabled]="disabled" type="submit" class="btn amaco-btn amaco-btn-dark center-btn">Sign
+                                        Up</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

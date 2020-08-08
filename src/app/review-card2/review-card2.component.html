@@ -1,0 +1,110 @@
+ 
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-sm-12 listing-wrapper card ">
+    <div class="row listing-top-section">
+        <div class = "col-md-12">
+
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 listing-main-image-wrapper my-auto">
+            <div class="">
+                <img src="{{listing.main_image}}" class="listing-main-image image-centered" />
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-12 listing-details-section">
+            <div class = "col-md-12">
+                <h3 class="listing-title faded-font"> <a routerLink="/order-details" class = "faded-font item-name">{{listing.title}} </a></h3>
+                <hr /> 
+                
+                <div class = "row review-card"> 
+                    <div class = "col-md-1 avatar-area no-padding">
+                        <div class = 'avatar-box'>
+                            <img src = "{{user.avatar_image}}" /> 
+                        </div>
+                    </div>
+                    
+                    <div class = "col-md-11 no-padding">
+                
+                        <div class = "col-md-12 cont-hld">
+                            <div class = "row no-padding"> 
+                                    
+                                    
+                                    <div class = "col-md-9 review-content-area">
+                                        <div class = "row">
+                                            <div class = "col-md-12 user-info-area ">
+                                                <div class = "col-md-12 no-padding faded-font">
+                                                    {{user.name}}
+                                                </div>
+                                                <div class = "col-md-12 no-padding">
+                            
+                                                    <div class = "row no-padding rating-slider-hld">
+                                                        <div class = "col-md-5   rating-slider"> 
+                                                          <ngb-rating [(rate)]="review.rating"  [(max)]="max" [readonly]="readonly">
+                                                            <ng-template let-fill="fill" let-index="index">
+                                                              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                                                            </ng-template>
+                                                          </ngb-rating>
+                                                        </div>
+                                                        <div class = "col-md-7 count-val faded-font"> 
+                                                          <span>{{review.rating}}</span>
+                                                        </div>
+                                                      </div>
+                            
+                                                     
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                    
+                    
+                               
+                    
+                    
+                    
+                    
+                                <div class = "col-md-3 time-area"> 
+                                    {{review.created_at}}
+                    
+                                </div>
+                                
+                            </div>
+                            
+                    
+                        </div>
+                
+                        <div class = "col-md-12 review-content faded-font cont-hld">
+                            {{review.content}}
+                        </div>
+                
+                    </div>
+                    
+                
+                
+                    
+                
+                </div>
+                
+                
+                
+                
+                 
+            </div>
+            
+        </div>
+
+        <hr />
+    </div>
+    
+    
+    
+</div>

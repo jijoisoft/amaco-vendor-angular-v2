@@ -1,0 +1,73 @@
+<div class = "row review-card"> 
+    <div class = "col-md-2 avatar-area no-padding">
+        <div class = 'avatar-box'>
+            <img src = "{{user.avatar_image}}" /> 
+        </div>
+    </div>
+    
+    <div class = "col-md-10 no-padding">
+
+        <div class = "col-md-12 ">
+            <div class = "row no-padding"> 
+                    
+                    
+                    <div class = "col-md-9 review-content-area">
+                        <div class = "row">
+                            <div class = "col-md-12 user-info-area ">
+                                <div class = "col-md-12 no-padding user-name">
+                                    {{user.name}}
+                                </div>
+                                <div class = "col-md-12 no-padding">
+            
+                                    <div class = "row no-padding rating-slider-hld">
+                                        <div class = "col-md-8   rating-slider"> 
+                                          <ngb-rating [(rate)]="review.rating"  [(max)]="max" [readonly]="readonly">
+                                            <ng-template let-fill="fill" let-index="index">
+                                              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                                            </ng-template>
+                                          </ngb-rating>
+                                        </div>
+                                        <div class = "col-md-4 count-val"> 
+                                          <span>{{review.rating}}</span>
+                                        </div>
+                                      </div>
+            
+                                     
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+    
+               
+    
+    
+    
+    
+                <div class = "col-md-3 time-area"> 
+                        {{review.created_at}}
+    
+                </div>
+                
+            </div>
+            
+    
+        </div>
+
+        <div class = "col-md-12 review-content">
+            {{review.content}} 
+        </div>
+
+    </div>
+    
+
+
+    
+
+</div>
+
+
+
+
+ 

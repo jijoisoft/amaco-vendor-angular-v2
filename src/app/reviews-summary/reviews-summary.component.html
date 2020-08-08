@@ -1,0 +1,73 @@
+
+                  <div class = "no-padding rev-summary-box vertical-center">
+                    <div class = "col-md-12 rev-summary-list "> 
+                      <div class = "row">
+                        <div class = "col-md-8   rating-slider"> 
+                          <ngb-rating [(rate)]="five"  [(max)]="max" [readonly]="readonly">
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating>
+                        </div>
+                        <div class = "col-md-4 count-val"> 
+                          <span>{{summary.five}}</span>
+                        </div>
+                      </div>
+
+                      <div class = "row">
+                        <div class = "col-md-8   rating-slider"> 
+                          <ngb-rating [(rate)]="four"  [(max)]="max" [readonly]="readonly">
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating>
+                        </div>
+                        <div class = "col-md-4 count-val"> 
+                          <span>{{summary.four}}</span>
+                        </div>
+                      </div>
+
+                      <div class = "row">
+                        <div class = "col-md-8 rating-slider"> 
+                          <ngb-rating [(rate)]="three"  [(max)]="max" [readonly]="readonly">
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating>
+                        </div>
+                        <div class = "col-md-4 count-val"> 
+                          <span>{{summary.three}}</span>
+                        </div>
+                      </div>
+
+                      <div class = "row">
+                        <div class = "col-md-8 rating-slider"> 
+                          <ngb-rating [(rate)]="two"  [(max)]="max" [readonly]="readonly">
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating>
+                        </div>
+                        <div class = "col-md-4 count-val"> 
+                          <span>{{summary.two}}</span>
+                        </div>
+                      </div>
+                       
+
+                      <div class = "row">
+                        <div class = "col-md-8 rating-slider"> 
+                          <ngb-rating [(rate)]="one"  [(max)]="max" [readonly]="readonly">
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                          </ngb-rating>
+                        </div>
+                        <div class = "col-md-4 count-val"> 
+                          <span>{{summary.one}}</span>
+                        </div>
+                      </div>
+
+
+                   
+                    </div>
+                  </div>

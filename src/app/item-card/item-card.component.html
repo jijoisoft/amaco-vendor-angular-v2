@@ -1,0 +1,30 @@
+ 
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-sm-12 listing-wrapper card">
+    <div class="row listing-top-section">
+        <div class="col-md-2 col-sm-2 col-xs-12 listing-main-image-wrapper my-auto">
+            <div class="">
+                <img src="{{listingMainImage}}" class="listing-main-image image-centered" />
+            </div>
+        </div>
+        <div class="col-md-10 col-sm-10 col-xs-12 listing-details-section">
+            <h3 class="listing-title faded-font"> <a routerLink="{{listingSlug}}" class = "faded-font item-name">{{listingTitle}} </a></h3>  
+            <p class="listing-detail-key middle-key "><span class = "faded-font">SAR {{ratePerQuantity}} | </span>  <span class = "faded-font">Qty: {{quantity}} </span>   <span class ="green-font">| Total: SAR {{totalPrice}}</span> </p>
+        </div>
+    </div>
+    
+</div>
+<div class = "col-md-12 date-area">
+        <p>Date Added: {{addedDateTime}} | For {{duration}}</p>
+
+</div>

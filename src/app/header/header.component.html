@@ -1,0 +1,42 @@
+
+ 
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <div class = 'container'>
+    <a class="navbar-brand" href="#">
+      <img (click)="goToHome()" src="assets/images/logo.png" alt="">
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+    </button> 
+    <div class="navbar-collapse collapse" id="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#" (click)="goToHome()">Home</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class = "avatar-area">
+        <div class = 'avatar-box'>
+          <img src = "{{avatar_image}}" /> 
+        </div>
+        
+        <div class="dash-links">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{name}}<fa-icon [icon]="dropdownIcon"></fa-icon></button>
+            
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem  data-toggle="modal" data-target="#editProfileModal"  >Edit Profile</button>
+              <button ngbDropdownItem  data-toggle="modal" data-target="#changePasswordModal" >Change Password</button> 
+              <button ngbDropdownItem  (click)="logout()">Logout</button> 
+            </div>
+          </div> 
+
+        </div>
+          
+    </div>
+
+  </div>
+  
+</nav>
+ 

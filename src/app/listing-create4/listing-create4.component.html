@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class = "container body-area">
+
+<div class = "container listing-create-container ">
+    <div class = "row">
+        <div class = "col-md-12 title-area"><h1>Register a new listing</h1></div>
+        <div class = "col-md-12 stepper-area"> 
+            <app-stepper  step="4"></app-stepper>
+        </div>
+        <div class = "bubble">
+            <div class = "col-md-12 form-area  "> 
+                <div class = "row step4" >
+                    
+                      <div class = "col-md-12 like-area">
+                        <h1><fa-icon [icon]="likeIcon"></fa-icon></h1>
+                      </div>
+                      <div class = "col-md-12 success-area">
+                          <h2>Success !</h2>
+    
+                     </div>
+                     <div class = "col-md-12 txt-area">
+                        <h3>Your listing is now ready for publishing</h3>
+                     </div>
+                     <div class = "col-md-12 pub publish-now-area">
+                        <button [routerLink]="['/equipments']">Publish Now</button>
+                    </div>
+                    <div class = "col-md-12 pub publish-later-area">
+                        <button  [routerLink]="['/equipments']">Publish Later</button>
+    
+                   </div>
+                </div>
+                 
+               
+            </div>
+
+            
+        </div>
+    </div>
+  
+</div>
+
+
+
+</div>
+<app-footer></app-footer>

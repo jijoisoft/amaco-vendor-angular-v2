@@ -1,0 +1,30 @@
+
+<app-header></app-header>
+<div class = "container body-area">
+
+
+<div class = "sidenav-area">
+    <app-sidebar selected = "reviews"></app-sidebar>
+</div>
+
+<div class = "content-area">
+    <ngx-spinner [fullScreen]="true" bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#267edf" type="ball-pulse-sync"  > 
+     <p style="color: white"> Loading... </p>
+    </ngx-spinner>
+    <div class = "col-md-12 no-padding" *ngFor="let review of reviews.items"> 
+
+        <app-review-card2  [review]="review" [listingImageBase]="reviews.listingImageBase" [userImageBase]="reviews.userImageBase"></app-review-card2>  
+
+    </div>
+    
+    <div class = "row">
+        <div class = "col-md-12">
+            <app-pagination></app-pagination>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,231 @@
+<app-header></app-header>
+
+<div class="container body-area">
+
+
+    <div class="container listing-create-container ">
+        <div class="row">
+            <div class="col-md-12 title-area">
+                <h1>Register a new listing</h1>
+            </div>
+            <div class="col-md-12 stepper-area">
+                <app-stepper step="2"></app-stepper>
+            </div>
+            <div class="bubble">
+                <div class="col-md-12 form-area">
+                    <div class="col-md-12 step-heading">
+                        <h2>Pricing Information</h2>
+                    </div>
+                    <form [formGroup]="listingCreateTwo" (ngSubmit)="listingCreateTwoSubmit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <!--div class="col-md-12">
+                                    <div class="col-md-12">
+                                        <h2>Hourly Pricing</h2>
+                                    </div>
+                                    <hr />
+                                </div>
+                                <div class="col-md-12 switch-container">
+                                    <div class="col-md-6 left">
+                                        <h4>Enable / Disable</h4>
+                                    </div>
+                                    <div class="col-md-6 left">
+                                        <div class="custom-control custom-switch">
+                                            <input  formControlName="enableHourlyPrice" type="checkbox" class="custom-control-input" id="enablieHourlyPrice">
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-12">
+                                        <label>Price per unit</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="pricing-label">SAR</label>
+
+                                    <div class="form-group pricing-input">
+                                        <input type="text" class="form-control amaco-input" placeholder="Enter price "
+                                            aria-label="Name" aria-describedby="basic-addon2">
+                                    </div>
+
+                                </div>
+
+                            </div-->
+                                    <hr />
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <h2>Daily Pricing</h2>
+                                            </div>
+                                            <hr />
+                                        </div>
+                                        <div class="col-md-12 switch-container">
+                                            <div class="col-md-6 left">
+                                                <h4>Enable / Disable</h4>
+                                            </div>
+                                            <div class="col-md-6 left">
+                                                <div class="custom-control custom-switch">
+                                                    <input formControlName="enableDailyPrice" type="checkbox"
+                                                        class="custom-control-input" id="enableDailyPrice">
+                                                    <label class="custom-control-label" for="enableDailyPrice"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <label>Price per unit</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="pricing-label">SAR</label>
+
+                                            <div class="form-group pricing-input">
+                                                <input formControlName="dailyPrice" type="text"
+                                                    class="form-control amaco-input" placeholder="Enter price "
+                                                    aria-label="Name" aria-describedby="basic-addon2">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <hr />
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <h2>Weekly Pricing</h2>
+                                            </div>
+                                            <hr />
+                                        </div>
+                                        <div class="col-md-12 switch-container">
+                                            <div class="col-md-6 left">
+                                                <h4>Enable / Disable</h4>
+                                            </div>
+                                            <div class="col-md-6 left">
+                                                <div class="custom-control custom-switch">
+                                                    <input formControlName="enableWeeklyPrice" type="checkbox"
+                                                        class="custom-control-input" id="enableWeeklyPrice">
+                                                    <label class="custom-control-label" for="enableWeeklyPrice"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <label>Price per unit</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="pricing-label">SAR</label>
+
+                                            <div class="form-group pricing-input">
+                                                <input formControlName="weeklyPrice" enableWeeklyPrice type="text"
+                                                    class="form-control amaco-input" placeholder="Enter price "
+                                                    aria-label="Name" aria-describedby="basic-addon2">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <hr />
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <h2>Monthly Pricing</h2>
+                                            </div>
+                                            <hr />
+                                        </div>
+                                        <div class="col-md-12 switch-container">
+                                            <div class="col-md-6 left">
+                                                <h4>Enable / Disable</h4>
+                                            </div>
+                                            <div class="col-md-6 left">
+                                                <div class="custom-control custom-switch">
+                                                    <input formControlName="enableMonthlyPrice" type="checkbox"
+                                                        class="custom-control-input" id="enableMonthlyPrice">
+                                                    <label class="custom-control-label"
+                                                        for="enableMonthlyPrice"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <label>Price per unit</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="pricing-label">SAR</label>
+
+                                            <div class="form-group pricing-input">
+                                                <input formControlName="monthlyPrice" type="text"
+                                                    class="form-control amaco-input" placeholder="Enter price "
+                                                    aria-label="Name" aria-describedby="basic-addon2">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-9 content-area ">
+                                        <h3>Title</h3>
+                                        <p>Contents lorem ipsum is simply dummy text of the printing and typesetting
+                                            industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s, when
+                                            an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen
+                                            book. It has survived not only five centuries, but also the leap into
+                                            electronic
+                                            typesetting, remaining essentially unchanged. It was popularised in the
+                                            1960s with
+                                            the release of Letraset sheets containing Lorem Ipsum passages, and more
+                                            recently
+                                            with desktop publishing software like Aldus PageMaker including versions of
+                                            Lorem
+                                            Ipsum.
+    
+    
+                                        </p>
+    
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 buttons-area">
+                                <button class="btn left" [routerLink]="['/listings/create']">Previous</button>
+
+                                <button class="btn right" type="submit">Next</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <app-footer></app-footer>

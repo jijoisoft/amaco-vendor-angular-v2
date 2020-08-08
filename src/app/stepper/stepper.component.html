@@ -1,0 +1,43 @@
+<div class="container"> 
+  <div id="stepper1" class="bs-stepper">
+    <div class="bs-stepper-header">
+      <div class="step" data-target="#test-l-1"  [class]= "step1Class">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">1</span> 
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-2"  [class]= "step2Class">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">2</span> 
+        </button>
+      </div>
+      <div class="line"></div>
+      <div   data-target="#test-l-3"  [class]= "step3Class">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">3</span> 
+        </button>
+      </div>
+      <div class="line"></div>
+      <div   data-target="#test-l-3"  [class]= "step4Class">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">4</span> 
+        </button>
+      </div>
+    </div>
+    <div class="bs-stepper-content">
+      <form (ngSubmit)="onSubmit()"> 
+        <div id="test-l-2" class="content">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+          </div>
+          <button (click)="next()" class="btn btn-primary">Next</button>
+        </div>
+        <div id="test-l-3" class="content text-center">
+          <button type="submit" class="btn btn-primary mt-5">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+$color1: rgb(75,78,83)
+$color2: rgb(186,186,186)
+$blue1: rgb(27,53,131)
+$arrow-left-pos: 414px
+$inner-arrow-left-pos: 415px
+$form-bg: rgb(245,246,248)
+$form-border-color: #d6d6d6
+.listing-create-container
+    display: block
+    
+.form-area
+    display: block 
+    color: $color1 !important
+
+    .step-heading
+        padding-bottom: 45px !important
+    input, textarea, button
+        border-radius: 10px
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+
+    input, button
+        height: 65px
+    textarea    
+        height: 130px
+    label
+        font-size: 20px 
+
+    p
+        color: $color2
+
+    .content-area
+        border-left: solid 1px #999
+    .dropdown
+        width: 100% !important
+    .dropdown-btn
+        text-align: left !important
+        border: none !important
+        color: $color2
+
+        :active
+            background: #fff !important
+    .buttons-area 
+        padding-top:50px
+        button 
+            background: $blue1 !important
+            color: #fff !important
+            padding-left: 40px
+            padding-right: 40px
+            font-weight: bold
+            font-size: 30px !important
+
+.pricing-label 
+    padding: 10px
+    float: left
+    font-size: 30px !important 
+
+.pricing-input 
+    float: left
+    min-width: 300px 
+.switch-container
+    padding-bottom: 20px !important
+    h4 
+        font-size: 28px !important
+    
+.title-area   
+    padding-bottom: 20px !important
+    padding-left: 80px
+
+    h1
+        font-weight: 600
+        color: $color1
+     
+
+.bubble:after  
+    left: $inner-arrow-left-pos 
+.bubble:before  
+    left: $arrow-left-pos 
+

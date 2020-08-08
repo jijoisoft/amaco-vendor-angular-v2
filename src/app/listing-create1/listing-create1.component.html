@@ -1,0 +1,145 @@
+<app-header></app-header>
+<div class = "container body-area">
+
+<div class = "container listing-create-container ">
+    <div class = "row">
+        <div class = "col-md-12 title-area"><h1>Register a new listing</h1></div>
+        <div class = "col-md-12 stepper-area"> 
+            <app-stepper step="1"></app-stepper>
+        </div>
+        <div class = "bubble">
+            <div class = "col-md-12 form-area   ">
+                <ngx-spinner [fullScreen]="false" bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#267edf" type="ball-pulse-sync" [fullScreen]="true"> <p style="color: white"> Loading... </p>
+                 </ngx-spinner>
+                <div class = "col-md-12 step-heading">
+                    <h2>Basic Information</h2>
+                </div>
+                <form [formGroup]="listingCreateForm" (ngSubmit)="saveListing()">
+                <div class = "row" >
+                    <div class="col-md-6">
+                        <div class="col-sm-12">
+                            <div class = "form-group">
+                                <label>Title </label> 
+                                <input type="hidden" formControlName="id" class="form-control amaco-input" placeholder="id " aria-label="Name" aria-describedby="basic-addon2">   
+                                
+                                <input type="text" formControlName="title" (keyup) = "generateSlug()" class="form-control amaco-input" placeholder="Name " aria-label="Name" aria-describedby="basic-addon2">   
+                                <label class="error-message w-100">{{errors.title}}</label>
+                            </div>                               
+                        </div>
+                        <div class = "col-md-12">
+                            <div class = "form-group">
+                                <label>Logo</label>
+                                <div class="custom-dropzone" ngx-dropzone  [multiple] = false [accept]="'image/png'" (change)="onMainImageFileSelect($event)">
+                                    <ngx-dropzone-label>
+                                        <div>
+                                            <h4>Drop Image or Upload from your computer</h4>
+                                        </div>
+                                    </ngx-dropzone-label>
+                                    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of mainImageFiles" [file]="f" [removable]="true" (removed)="onMainImageFileRemove(f)">
+                                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                    </ngx-dropzone-image-preview>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class = "col-md-12">
+                            <div class = "form-group">
+                                <label>Images</label>
+                                <div class="custom-dropzone" ngx-dropzone  [multiple] = true [accept]="'image/png'" (change)="onSubImageFileSelect($event)">
+                                    <ngx-dropzone-label>
+                                        <div>
+                                            <h4>Drop Image or Upload from your computer</h4>
+                                        </div>
+                                    </ngx-dropzone-label>
+                                    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of subImageFiles" [file]="f" [removable]="true" (removed)="onSubImageFileRemove(f)">
+                                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                    </ngx-dropzone-image-preview>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-12"> 
+                            <div class = "form-group">
+                                <label>Slug</label> 
+                                <input formControlName="slug" type="text" class="form-control amaco-input" placeholder="URL slug" aria-label="Name" aria-describedby="basic-addon2">
+                                <label class="error-message w-100">{{errors.slug}}</label>  
+                            </div>                                
+                        </div>
+                        <div class="col-sm-12"> 
+                            <div class = "form-group">
+                                <label>Short Description</label> 
+                                <textarea formControlName="short_description" class="form-control" placeholder="Short Description about your listing" aria-label="Name" aria-describedby="basic-addon2"></textarea>
+                            </div>                                
+                        </div>
+                        <div class="col-sm-12"> 
+                            <div class = "form-group">
+                                <label>Description</label> 
+                                <textarea formControlName="description" class="form-control" placeholder=" Write something about your listing...  
+                                " aria-label="Name" aria-describedby="basic-addon2"></textarea>
+                                <label class="error-message w-100">{{errors.textarea}}</label>
+                            </div>                                
+                        </div>
+
+                    </div>
+                    <div class = "col-md-6">
+                        
+                        <div class = "col-md-12 content-area ">
+                            <h3>Title</h3>
+                            <p>Contents lorem ipsum  is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                
+
+                            </p>
+
+                        </div>
+
+                    </div>
+                    <div class = "col-md-12"> 
+                            <div class = "col-md-6">
+                                <div class = "form-group">
+                                    <label>Category</label> 
+                                    <br />
+                                    <select class="filter-select" formControlName="category_id" style="width: 98%; height: 60px; border-radius: 10px;">
+                                        <option selected [ngValue]="0">-Select-</option>
+                                        <option *ngFor="let option of categoriesList" [ngValue]="option.id">{{option.name}}</option>
+                                    </select>
+                                    <label class="error-message w-100">{{errors.category_id}}</label>
+                                </div> 
+
+                            </div>    
+                            <div class="col-md-6"> 
+                                <div class = "form-group">
+                                    <label>Available Quantity</label> 
+                                    <input formControlName="quantity" type="text" class="form-control amaco-input" placeholder="Quantity" aria-label="Name" aria-describedby="basic-addon2">  
+                                    <label class="error-message w-100">{{errors.quantity}}</label>
+                                </div>                                
+                            </div>      
+
+                    </div>
+                    <div class = "col-md-12"> 
+                        <div class = "col-md-12">
+                            <div class = "form-group">
+                                <label>Keywords for search</label> 
+                                <tag-input [errorMessages]="errorMessages" [(ngModel)]='tags' formControlName="tags"  placeholder="Tags"  class="form-control amaco-input" [validators]="validators"></tag-input>
+                        
+                                <label class="error-message w-100">{{errors.tags}}</label>  
+                            </div>  
+                        </div>       
+
+                    </div>
+                </div>
+                
+                <div class = "col-md-12 buttons-area"> 
+                        <button class = "btn left" [routerLink]="['/equipments']">Cancel</button> 
+        
+                        <button type="submit" role="submit" class="btn right">Next</button>  
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  
+</div>
+
+
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class = "container body-area">
+    
+    <div class = "sidenav-area">
+        <app-sidebar selected = "support"></app-sidebar>
+    </div>
+
+    <div class = "row">
+        <div class = "col-md-12 cbox">
+            <form  [formGroup]="enquiryForm" (ngSubmit)="sendEnquiry()">
+                <div class = "col-md-12 title">
+                    <h1>Contact Us</h1>
+                    <h4>Let us know more about your query</h4>
+        
+                </div>
+                <div class = "col-md-12">
+        
+                    <div class = "form-group"> 
+                        <input type="text" class="form-control amaco-input" placeholder="Subject " aria-label="Name" aria-describedby="basic-addon2">   
+                    </div> 
+                    <div class = "form-group"> 
+                        <textarea class="form-control amaco-input" placeholder="Message"> </textarea>  
+                    </div> 
+                </div>
+                <div class = "col-md-12 submit">
+                    <button>Send</button>
+                </div>
+            </form>
+
+
+            
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

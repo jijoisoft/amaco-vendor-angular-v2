@@ -1,0 +1,83 @@
+<section class="sign-up-super-container">
+    <div class="container">
+        <div class="row sign-up-parent-row">
+            <div class="col-sm-6 sign-in-instead-container "
+                style="background-image: url('assets/images/onboarding.jpg');">
+                <div class="row my-auto sign-up-overlay height-100">
+                    <div class="col-sm-1 col-md-2"></div>
+                    <div class="col-sm-10 col-md-8 my-auto">
+                        <div class="row sign-in-instead-row">
+                            <div class="col-sm-12">
+                                <p class="sign-in-instead-hero-text">Already Have an Account?<br>Login Here!</p>
+                            </div>
+                        </div>
+                        <div class="row sign-in-instead-row">
+                            <div class="col-sm-12">
+                                <a (click)="goToSignIn()" class="btn amaco-btn amaco-btn-light center-btn">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 col-md-2"></div>
+                </div>
+            </div>
+            <div class="col-sm-6 sign-up-container">
+                <div class="row">
+                    <div class="col-sm-1 col-md-2"></div>
+                    <div class="col-sm-10 col-md-8 sign-up-content-wrapper">
+
+                        <div class="row sign-up-row sign-up-2-header">
+                            <div class="col-sm-12">
+                                <svg class="arrow-left" xmlns="http://www.w3.org/2000/svg" width="37" height="20"
+                                    viewBox="0 0 37 20">
+                                    <defs>
+                                        <style>
+                                            .cls-1 {
+                                                fill: #303030;
+                                                fill-rule: evenodd;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path id="dropdown_arrow" class="cls-1"
+                                        d="M391.391,2664.35l-16.5,16.09a2.059,2.059,0,0,1-2.844,0l-16.5-16.09a1.934,1.934,0,0,1,0-2.78,2.059,2.059,0,0,1,2.844,0l15.075,14.71,15.074-14.71a2.06,2.06,0,0,1,2.845,0A1.935,1.935,0,0,1,391.391,2664.35Z"
+                                        transform="translate(-355 -2661)" />
+                                </svg>
+                                <p class="message-text">Verify Phone Number</p>
+                            </div>
+
+                        </div>
+
+                        <div class="row sign-up-row sign-up-2-msg-wrap">
+                            <div class="col-sm-12">
+                                <p class="message-text">Enter The OTP received on your phone</p>
+                            </div>
+
+                        </div>
+                        
+                        <form [formGroup]="otpForm" (ngSubmit)="verifyOTP()">
+                            <div class="row sign-up-row otp-wrapper">
+                                <div class="col-sm-12">
+                                    <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="{length:4}">
+                                    </ng-otp-input>
+                                </div>
+                                <div style = "color: red">
+                                    {{errorMessage}}
+                                </div>
+                                <div style = "color: green">
+                                    Note: SMS gateway not enabled. So OTP is printed here. OTP: {{otpReceived}}
+                                </div>
+
+                            </div>
+                            <div class="row sign-up-row button-wrapper">
+                                <div class="col-sm-12">
+                                    <button [disabled]="isSubmissionDisabled" type="submit" (click)="verifyOTP()" class="btn amaco-btn amaco-btn-dark center-btn">Sign Up</button>
+                                </div>
+                            </div>
+                        </form>
+                            
+                    </div>
+                    <div class="col-sm-1 col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

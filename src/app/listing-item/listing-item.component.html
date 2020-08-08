@@ -1,0 +1,68 @@
+<div class="col-sm-12 listing-wrapper card">
+    <div class="row listing-top-section">
+        <div class="col-sm-3 listing-main-image-wrapper my-auto">
+            <div class="">
+                <img src="{{mainImage}}" class="listing-main-image image-centered" />
+            </div>
+        </div>
+        <div class="col-sm-9 listing-details-section">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="listing-title">{{title}}</h3>
+                    <p class="listing-detail-key rating-cnt">
+                        <ngb-rating [(rate)]="averageRating" [(max)]="max" [readonly]="readonly">
+                            <ng-template let-fill="fill" let-index="index">
+                                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                        <span class="avg-rating">{{averageRating}}</span>
+
+                    </p>
+                    <a class="btn amaco-btn-small amaco-btn-green" target = "_blank" href="{{previewLink}}">Preview</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7">
+                    <p class="listing-detail-key subtxt cat">Category : <span
+                            class="listing-detail-value">{{categoryName}}</span></p>
+                    <p class="listing-detail-key subtxt date">Created At : <span
+                            class="listing-detail-value">{{created_at}}</span> </p>
+                </div>
+                <div class="col-sm-5">
+                    <span *ngIf="isPublished;" class="listing-published-status amaco-green right">Published</span>
+                    <span *ngIf="notIsPublished;" class="listing-published-status amaco-red right">Not Published</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row listing-bottom-section">
+        <ng-container *ngIf="let image of images">
+            <div class="col-sm-2">
+                <div class="thumbnail-image-wrapper">
+                    <img src="{{image}}" class="listing-image-thumbnail image-centered" />
+                </div>
+            </div>
+        </ng-container>
+
+
+    </div>
+
+
+
+
+    <div class="dash-links options-menu">
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn" id="dropdownBasic1" ngbDropdownToggle><img class="ellipsis"
+                    src="assets/icons/ellipsis.png" /></button>
+
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem (click)="updateDetailsLink()">Update details</button>
+                <button ngbDropdownItem (click)="unpublishLink()">Unpublish</button>
+
+                <button ngbDropdownItem>Cancel</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

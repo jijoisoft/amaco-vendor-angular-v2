@@ -1,0 +1,160 @@
+ 
+  <app-header></app-header>
+
+
+  <div class = "container body-area">
+   
+  <div class = "sidenav-area">
+    <app-sidebar  selected="dashboard"></app-sidebar>
+  </div>
+
+  <div class = "content-area">
+    <div>
+      <ngx-spinner  [fullScreen] = "false" bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#267edf" type = "ball-pulse-sync" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+         
+        <div class="col-md-12 no-padding">
+              <h3>Monthly Statistics</h3>
+        </div>
+        <div>
+            <div class = "row">
+                <div class = "col-md-6  move-left cbox">
+                    <div class = "card count-box col-md-12 ">
+                      <div class = "icon col-md-4 vertical-center ">  
+                          <img  src="assets/icons/vendor/order.svg" />
+                      </div>
+                      <div class = "sub-title col-md-8 vertical-center ">
+                          <h3 >{{ordersCount}}</h3>&nbsp;&nbsp;<h6>Orders</h6>
+                      </div>
+                    </div>
+                </div>
+                
+                <div class = "col-md-6  move-left cbox">
+                  <div class = "card count-box col-md-12 ">
+                    <div class = "icon col-md-4 vertical-center ">  
+                      <img  src="assets/icons/vendor/money.svg" />
+                    </div>
+                    <div class = "sub-title col-md-8 vertical-center ">
+                      <h3>﷼‎</h3>&nbsp;&nbsp;<h6>{{totalAmount}}</h6>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+            <div>
+              <div class = "row">
+                  <div class = "col-md-6  move-left cbox">
+                      <div class = "card count-box col-md-12 ">
+                        <div class = "icon col-md-4 vertical-center ">  
+                            <img  src="assets/icons/vendor/customer.svg" />
+                        </div>
+                        <div class = "sub-title col-md-8 vertical-center ">
+                            <h3 >{{customersCount}}</h3>&nbsp;&nbsp;<h6>Customers</h6>
+                        </div>
+                      </div>
+                  </div>
+                  
+                  <div class = "col-md-6  move-left cbox">
+                    <div class = "card count-box col-md-12 ">
+                      <div class = "icon col-md-4 vertical-center ">  
+                          <img  src="assets/icons/vendor/review.svg" />
+                      </div>
+                      <div class = "sub-title col-md-8 vertical-center ">
+                        <h3>{{reviewsCount}}</h3>&nbsp;&nbsp;<h6>Reviews</h6>
+                      </div>
+                    </div>
+                  </div>
+  
+              </div>
+                
+              
+              
+
+        </div>
+          
+    </div>
+
+
+<style>
+  .rating-container .star {
+    font-size: 55px !important;
+  }
+</style>
+    
+    <div class = "block">
+        <div class="col-md-12 no-padding">
+              <h3>Recent Reviews</h3>
+        </div>
+        <div class  = "col-md-12 bbox card rev-bbox">
+            
+            <div class = "col-md-6 rev-summ-hld"  >
+                <div class = "col-md-6 rev-sum1"  >
+                  
+                  <div class = "col-md-12 no-padding">
+                      <div  class = "rev-sum-avg">
+                        <h1>3.5</h1>
+                      </div>
+
+                      <div   class = "rating-container">
+                        <ngb-rating [(rate)]="one"  [(max)]="max" [readonly]="readonly">
+                          <ng-template let-fill="fill" let-index="index">
+                            <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                          </ng-template>
+                        </ngb-rating>
+                      </div>
+
+                  </div>
+                  
+
+                  <div class = "col-md-12 rev-sum-line" > 
+                     {{averageRating}} ratings <br />& {{totalReviewsCount}} reviews 
+                  </div> 
+                 
+                </div> 
+
+
+
+
+                <div class = "col-md-6 rev-summary-cnt" >
+                   
+                  <app-reviews-summary  [summary]="ratingsSummary"     ></app-reviews-summary>
+
+                </div>
+            </div>
+
+            <div class = "col-md-6" style=" float: left !important;" *ngFor = "let review of reviews">
+                <app-review-card [review]="review" [userImageBase]="userImageBase" [listingImageBase]="reviews.listingImageBase"></app-review-card>
+                <div class = "col-md-12"><hr /></div> 
+            </div>
+
+        </div>
+          
+    </div>
+
+
+
+    <div class = "block order-block" *ngIf = "orders.length>0">
+      <div class="col-md-12 no-padding">
+        <h3>Recent Orders</h3>
+      </div>
+       
+      <div class="row">
+        <div class="col-sm-6" *ngFor = "let order of orders">
+          <app-order-card [order] = "order" [listingImageBase] = "listingImageBase"></app-order-card>
+        </div>
+      </div>
+
+      <!--div class  = "col-md-12 bbox order-cards no-padding">
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item" *ngFor = "let order of orders">
+            <app-order-card [order] = "order" [listingImageBase] = "listingImageBase"></app-order-card>
+          </li> 
+        </ul> 
+           
+      </div-->
+    </div>
+
+  </div>
+  
+  </div>
+  </div>
+ <app-footer></app-footer>

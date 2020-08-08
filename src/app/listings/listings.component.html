@@ -1,0 +1,52 @@
+
+  <app-header></app-header>
+  <div class = "container body-area">
+
+
+<div class="sidenav-area">
+    <app-sidebar  selected="{{selectedPage}}"></app-sidebar>
+</div>
+<div class="content-area">
+    <ngx-spinner  [fullScreen] = "false" bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#267edf" type = "ball-pulse-sync" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+       
+    <div class="row search-bar-wrapper">
+        <div class="col-sm-9 col-md-11 no-padding">
+            <div class="input-group search-box-area">
+                <div class="input-group-prepend">
+                    <span class="input-group-text search-input-prepend" id=""><fa-icon [icon]="searchIcon"></fa-icon></span>
+                </div>
+                <input type="text" class="form-control search-input" placeholder="Search for Equipments"
+                    aria-label="search" aria-describedby="Equipments Search">
+            </div>
+        </div>
+        <div class="col-sm-3 col-md-1 filter-icon-wrapper"> 
+        </div> 
+
+    </div><!-- Row for search and filter icon-->
+    <div class="row">
+        <div class="col-sm-12 filter-tags-container">
+            
+        </div>
+    </div><!-- row end for filter tags -->
+    <div class="row">
+        <div class="col-sm-12 register-button-wrapper">
+            <a class="btn amaco-btn-square amaco-btn-green center-btn"  [routerLink]="[listingPostingLink]"> <fa-icon [icon]="plusIcon"></fa-icon> Register a new
+                Equipment Listing</a>
+        </div>
+    </div><!-- register new equipment listing row end  -->
+    <div class="row listings-row" *ngFor="let listing of listings.items" >
+        <div class="col-sm-12">
+            <app-listing-item [equipment]="listing" [imageBase]="listings.imageBase" [pageBase]="listings.pageBase"></app-listing-item> 
+        </div>
+        
+    </div><!-- Listings row end -->
+    <div class="row">
+        <div class="col-sm-12">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="perPage" [maxSize]="10" (pageChange)="loadPage($event)"  aria-label="Default pagination"></ngb-pagination>
+        </div>
+        
+    </div>
+</div><!-- content area end -->
+
+</div>
+<app-footer></app-footer>

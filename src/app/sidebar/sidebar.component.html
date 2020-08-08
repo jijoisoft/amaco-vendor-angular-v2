@@ -1,0 +1,22 @@
+
+<div class="sidenav bbox">
+    <div class = "avatar-area" style = "background-image: url('assets/images/card-bg.png') !important"> 
+        <div class = 'avatar-box full-width center-to-parent'>
+            <img src = "{{companyImage}}" /> 
+        </div>
+        <div class = "full-width user-name center-to-parent">
+            {{name}}
+        </div>
+    </div>
+    <div  class = "links-area children-center">
+        <a routerLink="/home" [class]= "dashboardClass">Dashboard</a>
+        <a routerLink="/equipments" [class] = "equipmentsClass" >Equipments</a>
+        <a  routerLink="/services"  [class] = "manpowerClass">Manpower</a>
+        <a routerLink="/orders" [class] = "ordersClass">Orders</a>
+        <a routerLink="/reviews" [class] = "reviewsClass">Reviews</a>
+        <a routerLink="/profile" [class] = "profileClass">Profile</a>
+        <a routerLink="/support" [class] = "supportClass">Support</a>
+        <a > </a>
+    </div>
+  </div>
+  

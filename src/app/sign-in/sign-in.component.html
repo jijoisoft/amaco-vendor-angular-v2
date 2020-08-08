@@ -1,0 +1,78 @@
+<section class="sign-in-super-container">  		
+    <div class="container">
+        <div class="row sign-in-parent-row">
+            <div class="col-sm-6 sign-in-container">
+                <div class="row">
+                    <div class="col-sm-1 col-md-3"></div>
+                    <div class="col-sm-10 col-md-6 sign-in-content-wrapper">
+                        <div class="row sign-in-row">
+                            <div class="col-sm-12">
+                                <img class="logo-image" src="assets/images/logo.png" />
+                            </div>
+                        </div>
+                        <div class="row sign-in-row">
+                            <div class="col-sm-12">
+                                <p class="sign-in-message-text">Lets Get Started!</p>
+                            </div>	    			
+                        </div>
+                        <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="row sign-in-row">
+                            <div class="col-sm-12">
+                                <div class="input-group mb-3">
+                                  <input formControlName="email" type="email" class="form-control amaco-input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon2" required>
+                                  <div class="input-group-append">
+                                    <span class="input-group-text amaco-input-append check-icon" id="basic-addon2">
+                                        <fa-icon [icon] = "checkIcon"></fa-icon>
+                                    </span>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="input-group mb-3">
+                                  <input type="password" formControlName="password" class="form-control amaco-input" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
+                                  <div class="input-group-append">
+                                    <span class="input-group-text amaco-input-append times-icon" id="basic-addon2">
+                                        <fa-icon [icon] = "timesIcon"></fa-icon>
+                                    </span>
+                                  </div>
+                                </div>
+                            </div>
+                            <label class="error-message w-100">{{errors.email}}</label>
+                        </div>
+                        <div class="row sign-in-row">
+                            <div class="col-sm-12">
+                                <button [disabled]="!loginForm.valid" class="btn amaco-btn amaco-btn-dark center-btn" type="submit">Login</button>
+                            </div>
+                        </div>
+                        </form>
+                        <div class="row sign-in-row forgot-password-row">
+                            <div class="col-sm-12">
+                                <a class="amaco-text-link" (click)="goToForgotPassword()" >Forgot Password </a> 
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-1 col-md-3"></div>
+                </div>	    			
+            </div>
+            <div class="col-sm-6 sign-up-instead-container " style="background-image: url('assets/images/onboarding.jpg');">
+                <div class="row my-auto sign-up-overlay height-100" >
+                    <div class="col-sm-1 col-md-2"></div>
+                    <div class="col-sm-10 col-md-8 my-auto">
+                        <div class="row sign-up-instead-row">
+                            <div class="col-sm-12">
+                                <p class="sign-up-instead-hero-text">Don't Have an Account?<br>Sign Up Here!</p>
+                            </div>
+                        </div>
+                        <div class="row sign-up-instead-row">
+                            <div class="col-sm-12">
+                                <a (click)="goToSignUp()" class="btn amaco-btn amaco-btn-light center-btn" >Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>

@@ -1,0 +1,97 @@
+<app-header></app-header>
+<div class="container body-area">
+    <ngx-spinner [fullScreen]="true" bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#267edf" type="ball-pulse-sync">
+        <p style="color: white"> Loading... </p>
+    </ngx-spinner>
+    <div class="col-md-12">
+        <div class="row back-nav-area">
+            <a routerLink="/orders">
+                <fa-icon [icon]="backIcon"></fa-icon><span>{{orderId}}</span>
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-md-8 items">
+                <div class="col-md-12 card-row" *ngFor="let orderItem of orderItems">
+                    <app-item-card [orderItem]="orderItem" [listingImageBase]="listingImageBase"></app-item-card>
+                </div>
+
+            </div>
+            <div class="col-md-4 info">
+                <div class="row">
+
+                </div>
+                <div class="col-md-12">
+                    <h3>Price Details</h3>
+                </div>
+                <div class="col-md-12 price-box card">
+                    <div class="col-md-12 price">
+                        <div class="left">Subtotal</div>
+                        <div class="right">SAR {{subTotal}}</div>
+                    </div>
+                    <div class="col-md-12 price">
+                        <div class="left">Extra</div>
+                        <div class="right">SAR {{extra}}</div>
+                    </div>
+                    <div class="col-md-12 price total">
+                        <div class="left">Total</div>
+                        <div class="right">SAR {{totalPrice}}</div>
+                    </div>
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                    <div class="col-md-12">
+                        <h3>Order Status</h3>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="left"><h5>Current Status</h5></div>
+                        <div class="right"><h5><strong>{{currentStatus}}</strong></h5></div>
+                    </div>
+                    <div class="col-md-12">
+                        <h5><strong>Change Status</strong> </h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7" style="padding-right: 0 !important; padding-left: 30px">
+                            <select class="select-status" name="" id="" [(ngModel)]="statusId" >
+                                <option value="select">-Select-</option>
+                                <option *ngFor="let option of statusList" [ngValue]="option.name">{{option.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-5" style="padding-left: 0 !important;">
+                            <button (click)="updateStatus()" class="amaco-btn">Change Status</button>
+                        </div>
+                    </div>
+                    
+
+
+                </div>
+                <div class="col-md-12 customer-details">
+                    <h3>Customer Details</h3>
+
+                </div>
+
+                <div class="col-md-12 customer-box card">
+                    <div class="col-md-12 customer-info-area">
+                        <div class='avatar-box full-width center-to-parent'>
+                            <img src="{{userImageUrl}}" />
+                        </div>
+                        <div class="full-width user-name center-to-parent">
+                            {{userName}}
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 contact">
+                        <div class="col-md-12 mobile">Mobile number: {{userPhone}}</div>
+                        <div class="col-md-12 email">Email: {{userEmail}}</div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+<app-footer></app-footer>
